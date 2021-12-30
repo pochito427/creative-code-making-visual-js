@@ -4,7 +4,8 @@ const random = require('canvas-sketch-util/random');
 
 
 const settings = {
-	dimensions: [ 1080, 1080 ]
+	dimensions: [ 1080, 1080 ],
+	animate: true
 };
 
 const colors = ['yellow', 'blue', 'red'];
@@ -19,9 +20,9 @@ const getRandomInt = (min, max) => {
 const sketch = () => {
 	return ({ context, width, height }) => {
 		let my_gradient = context.createLinearGradient(0, 0, 0, 170);
-    my_gradient.addColorStop(0, 'black');
-    my_gradient.addColorStop(1, 'white');
-    context.fillStyle = my_gradient;
+        my_gradient.addColorStop(0, 'black');
+        my_gradient.addColorStop(1, 'white');
+        context.fillStyle = my_gradient;
 		context.fillRect(0, 0, width, height);
 
 		context.fillStyle = colors[getRandomInt(0, colors.length)];
